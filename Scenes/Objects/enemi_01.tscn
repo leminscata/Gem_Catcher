@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://jnnutu787qut"]
+
+[ext_resource type="Script" uid="uid://coh868uk3r6px" path="res://Scripts/enemi_01.gd" id="1_b2ron"]
+[ext_resource type="Texture2D" uid="uid://cax84xj1hxk8o" path="res://Assets/Tilemap/monochrome_tilemap.png" id="1_kjuqf"]
+[ext_resource type="AudioStream" uid="uid://cgnkc3cyhr5fk" path="res://Assets/Sounds/Dead.wav" id="3_snjgi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2ron"]
+atlas = ExtResource("1_kjuqf")
+region = Rect2(68, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snjgi"]
+atlas = ExtResource("1_kjuqf")
+region = Rect2(0, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1csxa"]
+atlas = ExtResource("1_kjuqf")
+region = Rect2(17, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jt72"]
+atlas = ExtResource("1_kjuqf")
+region = Rect2(34, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhe1v"]
+atlas = ExtResource("1_kjuqf")
+region = Rect2(51, 272, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_km88y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2ron")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snjgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1csxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jt72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhe1v")
+}],
+"loop": true,
+"name": &"Moving",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1xvy"]
+size = Vector2(8, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ai6"]
+size = Vector2(12, 5)
+
+[node name="Enemy01" type="CharacterBody2D" unique_id=1201607222]
+script = ExtResource("1_b2ron")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=718188611]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_km88y")
+animation = &"Dead"
+autoplay = "Moving"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=360296460]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_l1xvy")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=186188131]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1071360069]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_a8ai6")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=725019379]
+position = Vector2(-7, -1)
+target_position = Vector2(0, 19)
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=1175407082]
+stream = ExtResource("3_snjgi")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
