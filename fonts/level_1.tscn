@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cax84xj1hxk8o" path="res://Assets/Tilemap/monochrome_tilemap.png" id="1_8ffim"]
 [ext_resource type="Script" uid="uid://chrwwl0lk5rfa" path="res://Scripts/level.gd" id="1_6444e"]
 [ext_resource type="PackedScene" uid="uid://bl4me0t8fabfg" path="res://Scenes/Objects/player.tscn" id="2_xfk5q"]
-[ext_resource type="PackedScene" uid="uid://jnnutu787qut" path="res://Scenes/Objects/enemi_01.tscn" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://jnnutu787qut" path="res://Scenes/Objects/BasicEnemy.tscn" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://cp3kk6wqh3x2n" path="res://Scenes/Objects/coin.tscn" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://byqhpna108h6l" path="res://Scenes/Objects/door.tscn" id="6_evi0p"]
 

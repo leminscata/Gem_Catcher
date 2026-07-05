@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var death_sound: AudioStreamPlayer2D = $DeathSound
 @onready var reset_sound: AudioStreamPlayer2D = $ResetSound
 @onready var CoyoteTimer: Timer = $CoyoteTime
-@onready var coins_label: Label = $CoinsLabel
+@onready var coins_label: Label = $"../CoinsLabel"
 
 var was_on_floor: bool = false
 var is_dead: bool = false 
@@ -20,12 +20,18 @@ var coin_counter = 0
 
 func _physics_process(delta: float) -> void: #srocesa las fisicas cada segundo
 	
-	if Input.is_action_just_pressed("restart"): #si accion es presionada
-		if is_inside_tree(): #devuelve un true si se esta dentro de una escena
+	if Input.is_action_just_pressed("restart"):
+		if is_inside_tree():
 			reset_sound.play()
-			await get_tree().create_timer(0.2).timeout #get_tree() accede al arbol de la escena, create_timer() crea un temporizador y .timeout manda una alerta una vez el temporizador acaba
-			get_tree().reload_current_scene() #.reload_current_scene() vuelva a cargar la escena actual
+			await get_tree().create_timer(0.2).timeout
+			
+			# Forces Godot to clear cached resources so they reset entirely
+			var current_scene_path = get_tree().current_scene.scene_file_path
+			ResourceLoader.has_cached(current_scene_path) 
+			
+			get_tree().reload_current_scene()
 			return
+
 
 	if is_dead:
 		velocity.y += 980.0 * delta #hace que caiga al morir

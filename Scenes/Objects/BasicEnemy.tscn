@@ -56,9 +56,9 @@ animations = [{
 size = Vector2(8, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ai6"]
-size = Vector2(12, 5)
+size = Vector2(16, 5)
 
-[node name="Enemy01" type="CharacterBody2D" unique_id=1201607222]
+[node name="BasicEnemy" type="CharacterBody2D" unique_id=1201607222]
 script = ExtResource("1_b2ron")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=718188611]

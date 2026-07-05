@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bl4me0t8fabfg" path="res://Scenes/Objects/player.tscn" id="3_l14b5"]
 [ext_resource type="PackedScene" uid="uid://cp3kk6wqh3x2n" path="res://Scenes/Objects/coin.tscn" id="5_65xyd"]
 [ext_resource type="PackedScene" uid="uid://byqhpna108h6l" path="res://Scenes/Objects/door.tscn" id="6_356um"]
-[ext_resource type="Texture2D" uid="uid://chsyk0oj727aw" path="res://Assets/Pixel Keys x16/Tilemaps/pixel_keys_x16_white.png" id="6_jmmpn"]
+[ext_resource type="Texture2D" uid="uid://cv7sntreooxl7" path="res://Assets/Pixel Keys x16/Tilemaps/pixel_keys_x16_white.png" id="6_jmmpn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
 texture = ExtResource("2_mviin")
