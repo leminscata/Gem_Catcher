@@ -133,5 +133,5 @@ func die() -> void:
 	velocity.x = 0 
 	
 
-	await get_tree().create_timer(1.5).timeout #aplica un temporizador para el codigo de abajo
+	await get_tree().create_timer(0.7).timeout #aplica un temporizador para el codigo de abajo
 	get_tree().reload_current_scene() #recarga la escena

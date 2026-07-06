@@ -551,7 +551,7 @@ position = Vector2(56, 152)
 position = Vector2(88, 120)
 
 [node name="coin2" parent="." unique_id=1662860192 instance=ExtResource("4_hmpa6")]
-position = Vector2(184, 88)
+position = Vector2(184, 72)
 
 [node name="Door" parent="." unique_id=1741505006 instance=ExtResource("5_hmpa6")]
 position = Vector2(264, 88)

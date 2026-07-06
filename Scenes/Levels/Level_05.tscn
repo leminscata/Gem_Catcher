@@ -577,6 +577,7 @@ position = Vector2(200, 168)
 
 [node name="Door" parent="." unique_id=1741505006 instance=ExtResource("5_0vmjn")]
 position = Vector2(280, 120)
+next_scene_path = "uid://i0khkuoopahb"
 
 [node name="Player" parent="." unique_id=1065721777 instance=ExtResource("6_vsbkt")]
 position = Vector2(56, 120)

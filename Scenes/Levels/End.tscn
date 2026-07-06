@@ -1,14 +1,11 @@
-[gd_scene format=4 uid="uid://3fupnlegn3wf"]
+[gd_scene format=4 uid="uid://i0khkuoopahb"]
 
-[ext_resource type="Script" uid="uid://cq5s55yum51gs" path="res://Scripts/main_menu.gd" id="1_xg7my"]
-[ext_resource type="Texture2D" uid="uid://cax84xj1hxk8o" path="res://Assets/Tilemap/monochrome_tilemap.png" id="2_wmo1h"]
-[ext_resource type="AudioStream" uid="uid://beon706mkekwo" path="res://Assets/Sounds/Menu.wav" id="3_gnv55"]
-[ext_resource type="AudioStream" uid="uid://218yhvqmmewh" path="res://Assets/Sounds/Select.wav" id="4_b7svq"]
-[ext_resource type="PackedScene" uid="uid://bl4me0t8fabfg" path="res://Scenes/Objects/player.tscn" id="5_wmo1h"]
-[ext_resource type="PackedScene" uid="uid://cp3kk6wqh3x2n" path="res://Scenes/Objects/coin.tscn" id="6_gnv55"]
+[ext_resource type="Script" uid="uid://chrwwl0lk5rfa" path="res://Scripts/level.gd" id="1_uohm2"]
+[ext_resource type="Texture2D" uid="uid://cax84xj1hxk8o" path="res://Assets/Tilemap/monochrome_tilemap.png" id="2_2lfpm"]
+[ext_resource type="PackedScene" uid="uid://bl4me0t8fabfg" path="res://Scenes/Objects/player.tscn" id="3_2lfpm"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ce3w2"]
-texture = ExtResource("2_wmo1h")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
+texture = ExtResource("2_2lfpm")
 separation = Vector2i(1, 1)
 0:11/0 = 0
 1:11/0 = 0
@@ -501,7 +498,7 @@ separation = Vector2i(1, 1)
 0:0/0 = 0
 0:0/0/z_index = -1
 
-[sub_resource type="TileSet" id="TileSet_n45e2"]
+[sub_resource type="TileSet" id="TileSet_qk2tg"]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "FlyingSpikes"
@@ -510,86 +507,32 @@ terrain_set_0/terrain_1/name = "FlyingRock 1"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 terrain_set_0/terrain_2/name = "Ground"
 terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_ce3w2")
+sources/0 = SubResource("TileSetAtlasSource_evi0p")
 
-[node name="MainMenu" type="Control" unique_id=1293772191]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_xg7my")
+[node name="Level" type="Node2D" unique_id=453082756]
+script = ExtResource("1_uohm2")
 
-[node name="Start" type="Button" parent="." unique_id=576814585]
-layout_mode = 0
-offset_left = 128.0
-offset_top = 104.0
-offset_right = 196.0
-offset_bottom = 136.0
-scale = Vector2(0.92000246, 0.92000246)
-text = "Start"
-
-[node name="Exit" type="Button" parent="." unique_id=1230685031]
-layout_mode = 0
-offset_left = 128.0
-offset_top = 136.0
-offset_right = 196.0
-offset_bottom = 168.0
-scale = Vector2(0.92000246, 0.92000246)
-text = "Exit"
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=770719773]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=864428106]
 texture_filter = 1
 position = Vector2(0, -16)
-tile_map_data = PackedByteArray("AAAaABUAAAAAAAAAAAAbABUAAAAAAAAAAAAcABUAAAAAAAAAAAAdABUAAAAAAAAAAAAnABUAAAAQAAYAAAAkABYAAAAQAAYAAAAjABYAAAAQAAYAAAAlABYAAAAQAAYAAAAaABMAAAAAAAAAAAAbABMAAAAAAAAAAAAcABMAAAAAAAAAAAAdABMAAAAAAAAAAAAfABQAAAAAAAAAAAAgABIAAAAAAAAAAAAgABQAAAAAAAAAAAAhABQAAAAAAAAAAAAjABIAAAAAAAAAAAAkABIAAAAAAAAAAAAlABIAAAAAAAAAAAAmABIAAAAAAAAAAAAnABIAAAAAAAAAAAAsABQAAAAAAAAAAAAAAAEAAAAHAAsAAAAAAAIAAAAHAAwAAAAAAAMAAAAHAAwAAAAAAAQAAAAHAAwAAAAAAAUAAAAHAAwAAAAAAAYAAAAHAAwAAAAAAAcAAAAHAAwAAAAAAAgAAAAHAAwAAAAAAAkAAAAHAAwAAAAAAAoAAAAHAAwAAAAAAAsAAAAHAAwAAAAAAAwAAAAHAAwAAAAAAA0AAAAHAA0AAAABAAEAAAAIAAsAAAABAA0AAAAIAAsAAAACAAEAAAAIAAsAAAACAA0AAAAIAAsAAAADAAEAAAAIAAsAAAADAA0AAAAIAAsAAAAEAAEAAAAIAAsAAAAEAA0AAAAIAAsAAAAFAAEAAAAIAAsAAAAFAA0AAAAIAAsAAAAGAAEAAAAIAAsAAAAGAA0AAAAIAAsAAAAHAAEAAAAIAAsAAAAHAA0AAAAIAAsAAAAIAAEAAAAIAAsAAAAIAA0AAAAIAAsAAAAJAAEAAAAIAAsAAAAJAA0AAAAIAAsAAAAKAAEAAAAIAAsAAAAKAA0AAAAIAAsAAAALAAEAAAAIAAsAAAALAA0AAAAIAAsAAAAMAAEAAAAIAAsAAAAMAA0AAAAIAAsAAAANAAEAAAAIAAsAAAANAA0AAAAIAAsAAAAOAAEAAAAIAAsAAAAOAA0AAAAIAAsAAAAPAAEAAAAIAAsAAAAPAA0AAAAIAAsAAAAQAAEAAAAIAAsAAAAQAA0AAAAIAAsAAAARAAEAAAAIAAsAAAARAA0AAAAIAAsAAAASAAEAAAAIAAsAAAASAA0AAAAIAAsAAAATAAEAAAAJAAsAAAATAAIAAAAHAAwAAAATAAMAAAAHAAwAAAATAAQAAAAHAAwAAAATAAUAAAAHAAwAAAATAAYAAAAHAAwAAAATAAcAAAAHAAwAAAATAAgAAAAHAAwAAAATAAkAAAAHAAwAAAATAAoAAAAHAAwAAAATAAsAAAAHAAwAAAATAAwAAAAHAAwAAAATAA0AAAAJAA0AAAASAAwAAAARAAgAAAARAAwAAAAQAAgAAAAQAAwAAAAQAAgAAAAPAAwAAAAQAAgAAAAOAAwAAAAQAAgAAAANAAwAAAAQAAgAAAAMAAwAAAAQAAgAAAALAAwAAAAQAAgAAAAKAAwAAAAQAAgAAAAJAAwAAAAQAAgAAAAIAAwAAAAQAAgAAAAHAAwAAAAQAAgAAAAGAAwAAAAQAAgAAAAFAAwAAAAQAAgAAAAEAAwAAAAQAAgAAAADAAwAAAAQAAgAAAACAAwAAAAQAAgAAAABAAwAAAAPAAgAAAARAAsAAAASAAIAAAACAAsAAAAQAAIAAAA=")
-tile_set = SubResource("TileSet_n45e2")
+tile_map_data = PackedByteArray("AAAaABUAAAAAAAAAAAAbABUAAAAAAAAAAAAcABUAAAAAAAAAAAAdABUAAAAAAAAAAAAnABUAAAAQAAYAAAAkABYAAAAQAAYAAAAjABYAAAAQAAYAAAAlABYAAAAQAAYAAAAaABMAAAAAAAAAAAAbABMAAAAAAAAAAAAcABMAAAAAAAAAAAAdABMAAAAAAAAAAAAfABQAAAAAAAAAAAAgABIAAAAAAAAAAAAgABQAAAAAAAAAAAAhABQAAAAAAAAAAAAjABIAAAAAAAAAAAAkABIAAAAAAAAAAAAlABIAAAAAAAAAAAAmABIAAAAAAAAAAAAnABIAAAAAAAAAAAAsABQAAAAAAAAAAAAAAAEAAAAHAAsAAAAAAAIAAAAHAAwAAAAAAAMAAAAHAAwAAAAAAAQAAAAHAAwAAAAAAAUAAAAHAAwAAAAAAAYAAAAHAAwAAAAAAAcAAAAHAAwAAAAAAAgAAAAHAAwAAAAAAAkAAAAHAAwAAAAAAAoAAAAHAAwAAAAAAAsAAAAHAAwAAAAAAAwAAAAHAAwAAAAAAA0AAAAHAA0AAAABAAEAAAAIAAsAAAABAA0AAAAIAAsAAAACAAEAAAAIAAsAAAACAAsAAAAQAAUAAAACAA0AAAAIAAsAAAADAAEAAAAIAAsAAAADAA0AAAAIAAsAAAAEAAEAAAAIAAsAAAAEAA0AAAAIAAsAAAAFAAEAAAAIAAsAAAAFAA0AAAAIAAsAAAAGAAEAAAAIAAsAAAAGAA0AAAAIAAsAAAAHAAEAAAAIAAsAAAAHAA0AAAAIAAsAAAAIAAEAAAAIAAsAAAAIAA0AAAAIAAsAAAAJAAEAAAAIAAsAAAAJAA0AAAAIAAsAAAAKAAEAAAAIAAsAAAAKAA0AAAAIAAsAAAALAAEAAAAIAAsAAAALAA0AAAAIAAsAAAAMAAEAAAAIAAsAAAAMAA0AAAAIAAsAAAANAAEAAAAIAAsAAAANAA0AAAAIAAsAAAAOAAEAAAAIAAsAAAAOAA0AAAAIAAsAAAAPAAEAAAAIAAsAAAAPAAsAAAAQAAUAAAAPAA0AAAAIAAsAAAAQAAEAAAAIAAsAAAAQAAsAAAAQAAUAAAAQAA0AAAAIAAsAAAARAAEAAAAIAAsAAAARAAsAAAAQAAUAAAARAA0AAAAIAAsAAAASAAEAAAAIAAsAAAASAA0AAAAIAAsAAAATAAEAAAAJAAsAAAATAAIAAAAHAAwAAAATAAMAAAAHAAwAAAATAAQAAAAHAAwAAAATAAUAAAAHAAwAAAATAAYAAAAHAAwAAAATAAcAAAAHAAwAAAATAAgAAAAHAAwAAAATAAkAAAAHAAwAAAATAAoAAAAHAAwAAAATAAsAAAAHAAwAAAATAAwAAAAHAAwAAAATAA0AAAAJAA0AAAASAAwAAAARAAcAAAASAAsAAAARAAUAAAARAAwAAAAQAAcAAAAQAAwAAAAQAAcAAAAPAAwAAAAQAAcAAAAOAAwAAAAQAAcAAAAOAAsAAAAQAAUAAAANAAwAAAAQAAcAAAANAAsAAAAQAAUAAAAMAAwAAAAQAAcAAAAMAAsAAAAQAAUAAAALAAwAAAAQAAcAAAALAAsAAAAQAAUAAAAKAAwAAAAQAAcAAAAKAAsAAAAQAAUAAAAJAAwAAAAQAAcAAAAJAAsAAAAQAAUAAAAIAAwAAAAQAAcAAAAIAAsAAAAQAAUAAAAHAAwAAAAQAAcAAAAHAAsAAAAQAAUAAAAGAAwAAAAQAAcAAAAGAAsAAAAQAAUAAAAFAAwAAAAQAAcAAAAFAAsAAAAQAAUAAAAEAAwAAAAQAAcAAAAEAAsAAAAQAAUAAAADAAwAAAAQAAcAAAADAAsAAAAQAAUAAAACAAwAAAAQAAcAAAABAAwAAAAPAAcAAAABAAsAAAAPAAUAAAACAAoAAAAQAAIAAAARAAoAAAAQAAIAAAA=")
+tile_set = SubResource("TileSet_qk2tg")
 
-[node name="NavSound" type="AudioStreamPlayer2D" parent="." unique_id=1327947361]
-stream = ExtResource("3_gnv55")
-volume_db = 1.0
-
-[node name="AcceptSound" type="AudioStreamPlayer2D" parent="." unique_id=1400564364]
-stream = ExtResource("4_b7svq")
-volume_db = 1.0
-
-[node name="Player" parent="." unique_id=1065721777 instance=ExtResource("5_wmo1h")]
-position = Vector2(56, 168)
-script = null
-
-[node name="coin" parent="." unique_id=1277971207 instance=ExtResource("6_gnv55")]
-position = Vector2(64, 128)
-
-[node name="coin2" parent="." unique_id=192891521 instance=ExtResource("6_gnv55")]
-position = Vector2(64, 64)
-
-[node name="coin3" parent="." unique_id=91138997 instance=ExtResource("6_gnv55")]
-position = Vector2(256, 64)
-
-[node name="coin4" parent="." unique_id=695457595 instance=ExtResource("6_gnv55")]
-position = Vector2(256, 128)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1573118894]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1891616951]
 position = Vector2(160, 104)
 zoom = Vector2(3.6, 3.1)
 
-[node name="Version" type="Label" parent="." unique_id=20827026]
-layout_mode = 0
-offset_left = 198.0
-offset_top = 83.00001
-offset_right = 250.0
-offset_bottom = 107.00001
-scale = Vector2(0.5199997, 0.5199997)
-text = "0.1.1"
-
-[node name="Titulo" type="Label" parent="." unique_id=1315187250]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 63.0
-offset_right = 228.0
-offset_bottom = 87.0
-text = "Gem Catcher"
+[node name="LevelTitle" type="Label" parent="." unique_id=364684931]
+texture_filter = 1
+offset_left = 80.0
+offset_top = 72.0
+offset_right = 279.9999
+offset_bottom = 123.0
+scale = Vector2(0.8000003, 0.8000003)
+text = "You`ve completed 
+the prototype!"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[node name="Player" parent="." unique_id=1065721777 instance=ExtResource("3_2lfpm")]
+position = Vector2(56, 152)
+script = null

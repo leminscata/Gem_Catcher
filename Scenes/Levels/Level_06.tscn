@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://chrwwl0lk5rfa" path="res://Scripts/level.gd" id="1_f7qam"]
 [ext_resource type="Texture2D" uid="uid://cax84xj1hxk8o" path="res://Assets/Tilemap/monochrome_tilemap.png" id="2_32hfu"]
-[ext_resource type="PackedScene" uid="uid://wmjm4p5nv5rx" path="res://Scenes/Objects/moving_platform.tscn" id="3_32hfu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
 texture = ExtResource("2_32hfu")
@@ -539,8 +538,3 @@ offset_right = 317.0
 offset_bottom = 45.0
 scale = Vector2(0.8000003, 0.8000003)
 text = "Level "
-
-[node name="MovingPlatform" parent="." unique_id=673392458 instance=ExtResource("3_32hfu")]
-position = Vector2(120, 168)
-
-[editable path="MovingPlatform"]
