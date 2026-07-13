@@ -60,6 +60,7 @@ size = Vector2(16, 5)
 
 [node name="BasicEnemy" type="CharacterBody2D" unique_id=1201607222]
 script = ExtResource("1_b2ron")
+derecha = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=718188611]
 texture_filter = 1
